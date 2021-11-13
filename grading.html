@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="description" content="Avondale Taekwon-Do is a friendly, family oriented, International
+    Taekwon-Do school. Free lessons for the first two weeks.">
+    <title>Avondale TKD | FAQs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <noscript>Please Enable Javascript to run this page</noscript>
+</head>
+
+<body>
+
+<!-- Header -->
+<div>
+
+    <header>
+
+        <div class="main-title-outer">
+            <a href="index.html" style="text-decoration: none"><h1 class="main-title">Avondale Taekwon-Do</h1></a>
+        </div>
+        <!-- menu -->
+        <div class="main-nav">
+            <div class="maxWidth">
+                <nav class="navbar">
+
+                    <a href="#" onclick="openSlideMenu()">
+                        <div class="nav-burger">&#9776;</div>
+                    </a>
+
+                    <ul class="navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                        <li><a href="fees.html">Fees</a></li>
+                        <li><a href="grading.html">Grading</a></li>
+                        <li><a href="instructors.html">Instructors</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="contactUs.html">Contact Us</a></li>
+                    </ul>
+
+                    <!-- Dark/Light mode swapper -->
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                    <img src="images/genchoi2.png" alt="General Choi" class="main-icon">
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Side menu bar -->
+    <div id="side-menu" class="side-nav">
+        <div class="btn-close" onclick="closeSlideMenu()">&times;</div>
+        <a href="index.html">Home</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="fees.html">Fees</a>
+        <a href="grading.html">Grading</a>
+        <a href="instructors.html">Instructors</a>
+        <a href="videos.html">Videos</a>
+        <a href="contactUs.html">Contact Us</a>
+    </div>
+
+</div>
+
+<!-- Main Paragraph -->
+<div>
+
+    <div>
+        <h1 class="fees-header">GRADING IN TAEKWON-DO</h1>
+    </div>
+
+    <div>
+        <img class="index-image2" src="images/grading2.jpg" alt="breaking tiles at grading">
+    </div>
+
+    <div class="maxWidth grading-p1">
+        <p class="index-p">
+            Training in the Art of Taekwon-Do is long term commitment for any student. Advancing through the belts is
+            done by a system of gradings. Gradings are held every 4 months.
+        </p>
+        <p class="index-p">
+            A grading consists of line work, patterns, theory, and for higher grades, sparring. Students can advance
+            through the belts at a rate of 1 Gup every 4 months, until they reach black stripe. At this point, a student
+            must have at least 60 more hours before progressing to the next step.
+        </p>
+    </div>
+
+    <div>
+        <img class="index-image2" src="images/kidsGrading2.jpg" alt="breaking tiles at grading">
+    </div>
+
+    <div class="maxWidth grading-p1">
+        <p class="index-p">
+            Reaching Black Belt can take as little as 4 years, assuming the student advances as fast as possible and
+            does not fail any gradings. However, treating Taekwon-Do as just a bought commodity that allows the student
+            to gain a Black Belt is frowned upon, and will not be tolerated. This is reflected in higher level gradings,
+            where students may be asked how they have contributed to their school aside from working on their own
+            advancement (contributions can include teaching lower level students, helping at gradings and helping at
+            tournaments).
+        </p>
+    </div>
+
+
+</div>
+
+<!-- Footer -->
+<div style="background-color: var(--elevate-strong)">
+    <footer class="footer">
+        <strong>
+            <div class="footer-name">Martial Arts School in Auckland - Avondale Taekwon-Do</div>
+        </strong>
+        <div class="footer-privacy">
+            <a href="https://www.termsfeed.com/live/bb98ccf1-8403-4d2c-a4b7-ab626779f1dd" class="footer-privacy2" target="_blank">
+                Click here to see our privacy policy
+            </a>
+        </div>
+        <div class="footer-copyright">Copyright &copy; 2021, Avondale Taekwon-Do</div>
+    </footer>
+</div>
+
+<!-- Adding Javascript -->
+
+<script>
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+        }
+    }
+
+    function openSlideMenu() {
+        document.getElementById('side-menu').style.width = '350px';
+        document.getElementById('main').style.marginLeft = '350px';
+    }
+
+    function closeSlideMenu() {
+        document.getElementById('side-menu').style.width = '0';
+        document.getElementById('main').style.marginLeft = '0';
+    }
+</script>
+</body>
+</html>
