@@ -597,5 +597,25 @@ footer {
 
     .main-overlay-text3 {display: none}
 
+    .instructors-image {display: none}
+
+    .instructors-image2 {display: none}
+
+    .instructors-text {
+        margin-top: 0;
+        padding-bottom: 50px;
+    }
+
+    .instructors-text2 {
+        margin-top: 0;
+        padding-bottom: 500px;
+    }
+
+    .instructors-maxWidth p {
+        max-width: 1150px;
+        text-align: center;
+    }
+
+
 }
 
