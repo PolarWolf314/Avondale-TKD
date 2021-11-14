@@ -28,6 +28,7 @@
     --elevate-secondary-strong: #ffc7b8;
 }
 
+
 /* Global Styles */
 
 * {
@@ -41,6 +42,10 @@
 html, body {
     margin: 0;
     padding: 0;
+}
+
+html {
+    position: relative;
 }
 
 body {
@@ -65,6 +70,18 @@ a {
 
 p {
     font-size: 18px;
+    line-height: 1.2em;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 220px;
+    background-color: var(--elevate);
+    margin-top: auto;
+    overflow: hidden;
 }
 
 #main {
@@ -96,68 +113,25 @@ p {
 
 /* Toggle Switch */
 
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    padding: 4px 16px;
-    margin-top: 8px;
-}
-
-.theme-switch-wrapper em {
-    margin-left: 10px;
-    font-size: 16px;
-    background-color: transparent;
-}
-
 .theme-switch {
     display: inline-block;
-    height: 34px;
     position: relative;
-    width: 60px;
     background-color: transparent;
+}
+
+.theme-switch:hover {
+    cursor: pointer;
 }
 
 .theme-switch input {
     display:none;
 }
 
-.slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
+.switch {
+    font-size: 32px;
     position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-}
-
-.slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-}
-
-input:checked + .slider {
-    background-color: #66bb6a;
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
+    top: 3px;
+    right: 2px;
 }
 
 /* Styles for the header */
@@ -170,7 +144,7 @@ input:checked + .slider:before {
 .navbar {
     background-color: var(--primary-color);
     overflow: hidden;
-    height: 200px;
+    height: 100px;
     text-align: center;
     margin: 0 auto;
 }
@@ -181,27 +155,23 @@ input:checked + .slider:before {
     color: var(--font-color);
     background-color: var(--primary-color);
     text-align: center;
-    padding: 14px 16px;
+    margin: 25px 25px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 24px;
     border-radius: 8px;
     position: relative;
-    margin: auto;
 }
 
 .navbar ul {
     margin: 8px 0 0 0;
     list-style: none;
-}
-
-.navbar a:hover {
-    background-color: var(--elevate);
-    color: var(--font-color);
+    text-align: center;
 }
 
 .nav-burger {
     background-color: transparent;
-    padding: 4px;
+    position: relative;
+    top: 1px;
 }
 
 .side-nav {
@@ -256,11 +226,13 @@ input:checked + .slider:before {
 
 .main-title {
     background-color: var(--elevate);
-    padding: 20px;
+    padding: 40px;
     align-content: center;
     max-width: 1150px;
     margin: auto;
     text-align: center;
+    font-size: 60px;
+    text-shadow: 3px 3px 0 var(--font-color);
 }
 
 .main-icon {
@@ -284,23 +256,24 @@ input:checked + .slider:before {
     position: relative;
     bottom: 100%;
     width: 100%;
-    height: 120px;
+    height: 220px;
     background-color: var(--elevate);
-    margin-top: 120px;
+    margin-top: auto;
+    overflow: hidden;
 }
 
 .footer-name {
     background-color: transparent;
     color: var(--font-color);
     padding-top: 20px;
-    font-size: 25px;
+    font-size: 40px;
     text-align: center;
 }
 
 .footer-privacy {
     background-color: transparent;
     text-align: center;
-    padding: 5px;
+    padding: 20px 0 0 0;
 }
 
 .footer-privacy2 {
@@ -308,11 +281,12 @@ input:checked + .slider:before {
     color: var(--font-color);
     text-decoration: none;
     font-weight: bold;
+    font-size: 25px;
 }
 
 .footer-privacy2:hover {
     cursor: pointer;
-    font-size: 105%;
+    font-size: 160%;
     padding: -130%;
     color: var(--secondary-color);
 }
@@ -320,6 +294,8 @@ input:checked + .slider:before {
 .footer-copyright {
     text-align: center;
     background-color: transparent;
+    font-size: 25px;
+    padding: 20px;
 }
 
 /* Main page content */
@@ -328,6 +304,7 @@ input:checked + .slider:before {
     padding-top: 10px;
     color: var(--font-color);
     opacity: 100%;
+    line-height: 1.2em;
 }
 
 .main-p {
@@ -402,6 +379,8 @@ input:checked + .slider:before {
     text-align: center;
 }
 
+/* Tenets */
+
 .row {
     display: flex;
     align-content: center;
@@ -467,6 +446,42 @@ input:checked + .slider:before {
     font-size: 18px;
 }
 
+/* Instructors page */
+.instructors-header {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0;
+    font-size: 35px;
+}
+
+.instructors-text {
+    margin-top: -15%;
+}
+
+.instructors-text2 {
+    margin-top: -23%;
+    padding-bottom: 100px;
+}
+
+.instructors-maxWidth p {
+    max-width: 800px;
+    text-align: left;
+}
+
+.instructors-image {
+    position: relative;
+    left: 350px;
+}
+
+.instructors-image2 {
+    width: 200px;
+    position: relative;
+    left: 350px;
+    padding-bottom: 100px;
+}
+
+
+
 /* Duplicate, so it is easy to remove later in @media */
 
 .main-overlay-text3 {
@@ -481,9 +496,33 @@ input:checked + .slider:before {
     padding-right: 1%;
 }
 
+/* Link Hover Effect */
+
+.horizontal-link-hover-effect {
+    display: inline-block;
+    position: relative;
+}
+
+.horizontal-link-hover-effect::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background-color: var(--font-color); /* Change this to whatever colour you want the underline to be */
+    height: 3px; /* Change this to adjust the thickness of the underline */
+    width: 100%;
+    transition: transform 400ms;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.horizontal-link-hover-effect:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
 
-@media (max-width: 1020px) {
+
+@media (max-width: 1085px) {
     .main-title {
         text-align: center;
     }
@@ -492,13 +531,51 @@ input:checked + .slider:before {
 
     .main-icon {display: none}
 
-    .theme-switch-wrapper {
-        position: absolute;
-        left: 80vw;
+    p {
+        font-size: 25px;
     }
 
     .navbar {
-        height: 58px;
+        height: 130px;
+    }
+
+    .nav-burger {
+        font-size: 50px;
+        padding-left: 30px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        bottom: 2px;
+    }
+
+    .side-nav .btn-close {
+        font-size: 15vw;
+        position: absolute;
+        right: 45px;
+    }
+
+    .side-nav a {
+        font-size: 10vw;
+        padding: 3vw;
+        position: relative;
+        top: 150px;
+    }
+
+    .side-nav a:hover {
+        font-size: 10vw;
+    }
+
+    .switch {
+        padding: 10px;
+        position: relative;
+        font-size: 50px;
+        margin: auto;
+    }
+
+    .MOVE {
+        position: relative;
+        left: 35vw;
+        top: 24px;
     }
 
     * {
@@ -511,10 +588,14 @@ input:checked + .slider:before {
 
     .tenets {
         padding: 10vw 0;
+        font-size: 30px;
     }
 
     .main-overlay-text2 {
-        font-size: 14px;
+        font-size: 25px;
     }
+
     .main-overlay-text3 {display: none}
+
 }
+
